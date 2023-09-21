@@ -1,11 +1,28 @@
-# to find whether the given year is leap year or not#
-def isleapyear(year):
-  if(year%4==0 and year%100!=0) or year%400==0:
-    return True
-  else:
-    return False
-year=int(input("enter a year:"))
-if isleapyear(year):
- print('{} is a leapyear'.format(year))
-else:
-  print('{} is not a leap year'.format(year))
+class Bank_Account:
+    def __init__(self):
+        self.balance=0
+        print("Welcome to the Deposit & Withdrawal")
+ 
+    def deposit(self):
+        amount=float(input("Enter amount to be Deposited: "))
+        self.balance += amount
+        print("\n Amount Deposited:",amount)
+ 
+    def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: "))
+        if self.balance>=amount:
+            self.balance-=amount
+            print("\n You Withdrew:", amount)
+        else:
+            print("\n Insufficient balance  ")
+ 
+    def display(self):
+        print("\n Net Available Balance=",self.balance)
+ 
+
+s = Bank_Account()
+  
+s.deposit()
+s.withdraw()
+s.display()
+  
